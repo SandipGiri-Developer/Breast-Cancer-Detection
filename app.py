@@ -1,9 +1,8 @@
 import streamlit as st
-import pickle
+from joblib import load
 import numpy as np
 
-with open('early_breast_cancer_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+model = load('model.joblib')
 
 st.set_page_config(page_title="Breast Cancer Risk Assessment", layout="wide")
 st.markdown("""
