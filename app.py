@@ -41,7 +41,7 @@ with col1:
     st.subheader("Tumor Characteristics (Mean Values)")
     radius_mean = st.number_input("Mean Radius (mm)", min_value=0.0, max_value=30.0, value=10.0, step=0.1)
     perimeter_mean = st.number_input("Mean Perimeter (mm)", min_value=0.0, max_value=200.0, value=50.0, step=0.1)
-    area_mean = st.number_input("Mean Area (mm²)", min_value=0.0, max_value=2500.0, value=500.0, step=1.0)
+    area_mean = st.number_input("Mean Area (micro meter²)", min_value=0.0, max_value=2500.0, value=500.0, step=1.0)
     concavity_mean = st.number_input("Mean Concavity", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
     concave_points_mean = st.number_input("Mean Concave Points", min_value=0.0, max_value=1.0, value=0.05, step=0.01)
 
@@ -67,7 +67,7 @@ if st.button("Assess Risk", type="primary"):
     # Display results
     st.divider()
     if prediction == 1:
-        st.error(f"🚨 High Risk Detected: {probability*100:.1f}% probability of malignancy")
+        st.error(f"🚨 High Risk Detected: {probability*100:.2f}% probability of malignancy")
         st.markdown("""
         <div style="background-color:#f8d7da;color:#721c24;padding:10px;border-radius:5px;">
         <b>Recommendation:</b> Please consult with an oncologist immediately for further evaluation.
